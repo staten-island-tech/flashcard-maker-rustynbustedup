@@ -14,5 +14,20 @@ class Teacher:
             with open ("flashcards.json", "r") as file:
                 flashcards = json.load(file)
         except (FileNotFoundError, json.JSONDecodeError):
-            
+            flashcards = {}
+
+        while True:
+            a = input("do you want to make new flashcards? (yes/no):")
+            if a.lower() == "yes":
+                question = input ("what is your question?")
+                answer = input ("what is the answer to the previous question?")
+                flashcards[question] = answer 
+                with open ("flashcards.json", "w") as file:
+                    json.dump(flashcards, file, indent=4)
+                print("flashcards are saved")
+            elif a.lower() == "no":
+                print ("WHY U LAZY")
+                break
+
+    
 
