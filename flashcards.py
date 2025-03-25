@@ -29,5 +29,8 @@ class Teacher:
                 print ("WHY U LAZY")
                 break
 
+class Student:
+    
+
     
 
