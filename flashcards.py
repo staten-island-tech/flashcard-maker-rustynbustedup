@@ -2,10 +2,9 @@
 #if u do flashcard - Do it on paper
 
 
-
 import  json
 
-mode = input ("What mode do you want to enter? Teacher or Student?")
+mode = input ("What mode do you want to enter? Teacher or Student?" )
 
 class Teacher:
     @staticmethod #use a variable outside smthn else
@@ -28,9 +27,20 @@ class Teacher:
             elif a.lower() == "no":
                 print ("WHY U LAZY")
                 break
+            else: 
+                print ("Unknown input")
+                
 
 class Student:
+    @staticmethod 
+    def study_flashcards():
+        try:
+            with open("flashcards.json", "r" ) as file:
+                flashcards = json.load(file)
+
     
+if mode.lower() == "teacher":
+    Teacher.flashcard_maker()
 
     
 
